@@ -14,5 +14,24 @@
 \maketitle
 
 \question
-In frame $O$, a meter stick lies parallel to the $x$ axis and moves at velocity $V \mathbf{e}_y$.  Frame $\bar{O}$ is boosted relative to $O$ at velocity $\beta \mathbf{e}_x$ but not rotated, i.e., the spatial axes $\bar{x}\bar{y}\bar{z}$ lie parallel to $xyz$.  Show that in $\bar{O}$, the meter stick makes a nonzero angle $\theta$ with respect to the $\bar{x}$ axis, and derive an expression for $\theta$ in terms of $V$ and $\beta$.
+In frame $O$, a meter stick lies parallel to the $x$ axis and moves at velocity $V \mathbf{e}_y$.  Frame $\bar{O}$ is boosted relative to $O$ at velocity $\beta \mathbf{e}_x$ but not rotated, i.e., the spatial axes $\bar{x}\bar{y}\bar{z}$ lie parallel to $xyz$.  Show that in $\bar{O}$, the meter stick makes a nonzero angle $\theta$ with respect to the $\bar{x}$ axis, and derive an expression for $\theta$ in terms of $V$ and $\beta$. 
+
+We use the relativistic velocity formulae, referencing Hartle (4.28), which assumes that as in our problem, the barred or primed frame is moving with some velocity in the $x$-drection.  Namely
+\begin{subequations}
+\begin{align}
+V^{\bar{x}} &= \frac{V^{x} - v}{1 - v V^{x} / c^2}, \\
+V^{\bar{y}} &= \frac{V^{y}}{1 - v V^{x} / c^2} \sqrt{1 - v^2 / c^2}.
+\end{align}
+\end{subequations}
+Setting $c = 1$ and realizing $V^{x} = 0$, $V^{y} = V$, and $v = \beta$, we have
+\begin{subequations}
+\begin{align}
+V^{\bar{x}} &= -\beta, \\
+V^{\bar{y}} &= V \sqrt{1 - \beta^2}.
+\end{align}
+\end{subequations}
+Recall that $\theta = \mathrm{arctan}(y / x)$, so 
+\begin{equation}
+\theta = \mathrm{arctan}(\frac{-V \sqrt{1 - \beta^2}}{\beta})
+\end{equation}
 \end{document}
