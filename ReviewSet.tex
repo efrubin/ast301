@@ -2,14 +2,13 @@
 \documentclass[11pt,largemargins]{homework}
 
 % TODO: replace these with your information
-\newcommand{\hwname}{Elias Rubin}
-\newcommand{\hwemail}{erubin}
+\newcommand{\hwname}{}
+\newcommand{\hwemail}{}
 \newcommand{\hwtype}{Big Pset}
 \newcommand{\hwnum}{}
 \newcommand{\hwclass}{AST 301}
 \newcommand{\hwlecture}{}
 \newcommand{\hwsection}{}
-
 \begin{document}
 \maketitle
 
@@ -34,4 +33,48 @@ Recall that $\theta = \mathrm{arctan}(y / x)$, so
 \begin{equation}
 \theta = \mathrm{arctan}(\frac{-V \sqrt{1 - \beta^2}}{\beta})
 \end{equation}
+
+\question
+Observer $O$ constructs a clock in which a photon bounces back and forth along the $x$ axis at $x = 0$ and $x = L$. $O$ moves at speed $(4/5)c$ relative to $\bar{O}$ along the $x \bar{x}$ axis. 
+\begin{alphaparts}
+
+\questionpart
+What is the round trip time between the two mirrors in frames $O$ and $\bar{O}$?
+In frame $O$ the round trip time is simply the total distance $2L$ divided by $c$, i.e
+\begin{equation}
+\tau = \frac{2L}{c}
+\end{equation}
+To find the round trip time we use Hartle (4.15), which states
+\begin{equation}
+d\tau = d\bar{t} \sqrt{1 - V^2 / c^2}.
+\end{equation}
+For us, $d\tau = 2L/c$, so
+\begin{subequations}
+\begin{align*}
+\frac{2L}{c} &= d\bar{t} \sqrt{1 - V^2 / c^2}, \\
+d\bar{t} &= \frac{2L/c}{\sqrt{1 - V^2 / c^2}}, \\
+d\bar{t} &= \frac{5}{3} \frac{2L}{c},
+\end{align*}
+\end{subequations}
+Thus, the round trip time in $\bar{O}$ is
+\begin{equation}
+\bar{t} = \frac{10L}{c}
+\end{equation}
+
+\questionpart
+What is the separation between the mirrors in $\bar{O}$?
+Recall that 
+\begin{equation}
+\bar{L} = \frac{1}{\gamma} L_{0},
+\end{equation}
+where $L_{0}$ is the length in the rest frame.
+Then
+\begin{equation}
+\bar{L} = \frac{3}{5} L
+\end{equation}
+
+\end{alphaparts}
+	
+
+
 \end{document}
