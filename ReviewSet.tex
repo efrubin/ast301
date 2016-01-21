@@ -2,6 +2,8 @@
 \documentclass[11pt,largemargins]{homework}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage[makeroom]{cancel}
 
 % TODO: replace these with your information
 \newcommand{\hwname}{Elias, Guillermo, Maggie, Sam, Simon, Thomas}
@@ -14,7 +16,7 @@
 
 \begin{document}
 \maketitle
-
+\subsection*{Review Sheet Answers}
 %====================== Question 1 ===========================
 \question
 In frame $O$, a meter stick lies parallel to the $x$ axis and moves at velocity $V \mathbf{e}_y$.  Frame $\bar{O}$ is boosted relative to $O$ at velocity $\beta \mathbf{e}_x$ but not rotated, i.e., the spatial axes $\bar{x}\bar{y}\bar{z}$ lie parallel to $xyz$.  Show that in $\bar{O}$, the meter stick makes a nonzero angle $\theta$ with respect to the $\bar{x}$ axis, and derive an expression for $\theta$ in terms of $V$ and $\beta$. 
@@ -443,5 +445,390 @@ Now we can plug $\phi$ back into $r(\phi)$ and solve for $r_{i}$.  Doing so, we 
 \begin{equation}
 r_{i} = \frac{r_{p} (1 + \epsilon)}{1 + \epsilon \cos(3 \pi M/ a(1 - \epsilon^2))}
 \end{equation}
+\end{alphaparts}
+
+%==================== Question 12 ==================%
+\question
+The star known as S2 orbits the black hole at Sgr A* in the Galactic Center with a period of 15.9 yr.  The eccentricity of the orbit is $e = 0.8831 \pm 0.0034$ and the mass of the black hole $M_{\mathrm{bh}} = 4.30 \pm 0.27 \times 10^{6} M_{\odot}$.
+
+\begin{alphaparts}
+\questionpart
+Estimate the relativistic precession of periapse angle per orbit.
+
+Hartle (9.57) tells us that 
+\begin{equation}
+\delta \phi_{\mathrm{prec}} = \frac{6 \pi G}{c^2} \frac{M}{a (1 - \epsilon^2)}
+\end{equation}
+Note that we have the period.  To solve for the semimajor axis, $a$, we use Kepler and recover
+$$ a = \big(\frac{T^2}{4\pi^2} GM \big)^{1/3} $$
+
+Then we can evaluate these expressions.  Wolfram tells us that $a = 1.53 \times 10^{14} \mbox{ m}$. Thus, $\delta \phi = 0.0035 \mbox{ rad} = 0.2 \degree$. 
+
+\questionpart
+The latest estimate of the periapse angle is $\omega = 64.98\degree \pm 0.81 \degree$.  In view of the quoted $1 \sigma$ error, how long will it be before the precession is detected at $3\sigma$, assuming that the cadence and accuracy of the astrometric measurements remain constant?
+
+We calculated the precession per orbit so we just want to see how many orbits it takes to go $2.4 \degree$ at $0.2 \degree$ per orbit.  The answer is 12.
+
+\questionpart
+Estimate the difference between the orbital period measured by astronomers -- defined as the time between periapses -- and that experienced by the proper time of S2 itself. 
+
+This is analogous to problem 3.  We again use the Lorentz transform, setting $\bar{t} = \gamma(t - vx)$.  However, we have to solve for $x.$  $x$ is the circumference of the ellipse $2 \pi \sqrt{(a^2 + b^2)/2}$, where $b = a \sqrt{1 -e^2}$. Then we consider that $v = p/T$.  Therefore
+$$
+\bar{t} = \gamma (T - \frac{p^2}{T})
+$$
+\end{alphaparts}
+
+%===================== Question 13 =================%
+\question
+In its equatorial plane ($\theta = \pi/2$), the metric of a rotating black hole reduces to
+$$
+ds^2 = - \Big(1 - \frac{2M}{r} \Big) dt^2 - \frac{4aM}{r}dtd\phi + \Big(r^2 + a^2 + \frac{2Ma^2}{r} \Big) d\phi^2 + \Big(1 - \frac{2M}{r} + \frac{a^2}{r^2} \Big)^{-1} dr^2
+$$
+
+\begin{alphaparts}
+\questionpart
+Find three constants of motion for timelike and null geodesics in the equatorial plane. 
+
+For timelike geodesics $ds^2 < 0$, and for null geodesics $ds^2 = 0$.  We adopt an affine parameter $d\lambda = 1/m \cdot d\tau$. Then 
+$$\frac{dx^{\mu}}{d\lambda} = \frac{dx^{\mu}}{d\tau} \frac{d\tau}{d\lambda} = u^{\mu}m = p^{\mu}$$.
+
+Note that our metric does not have an explicit dependence on $t$ or $\phi$.  Therefore, there will be associated constants of motion.  Following the geodesic equation, we set $\alpha = t$ to find the first associated constant. 
+
+$$g_{tt} \frac{dt}{d\lambda} + g_{t\phi} \frac{d\phi}{d\lambda} = E,$$ or explicitly
+$$\Big(1 - \frac{2M}{r} \Big) \frac{dt}{d\lambda} +  \frac{2aM}{r} \frac{d\phi}{d\lambda} = E$$
+Note that we have removed a factor of 2, because the $dtd\phi$ term in the metric included contributions from both $g_{t\phi}$ and $g_{\phi t}$.
+
+Now set $\alpha = \phi$, and obtain
+$$\frac{2aM}{r} \frac{dt}{d\lambda} + \Big(r^2 + a^2 + \frac{2aM}{r} \Big) \frac{d\phi}{d\lambda} = L $$
+
+Our last constant of motion comes directly from the geodesic equation.  We divide through by $d\lambda^2$, noting that $(ds/d\lambda)^2 = p \cdot p = -m^2.$  This yields
+
+$$
+\centering
+- \Big(1 - \frac{2M}{r} \Big) \Big(\frac{dt}{d\lambda}\Big)^2 - \frac{4aM}{r} \frac{dt}{d\lambda} \frac{d\phi}{d\lambda} + \Big(r^2 + a^2 + \frac{2Ma^2}{r} \Big) \Big( \frac{d\phi}{d\lambda} \Big)^2 +  \Big(1 - \frac{2M}{r} + \frac{a^2}{r^2} \Big)^{-1} \Big(\frac{dr}{d\lambda} \Big)^2 = -m^2 $$
+
+\questionpart
+Show that $g_{tt} g_{\phi \phi} - g_{t \phi}^2 = -r^2 (g_{rr})^{-1}$, and use this to solve for $dt/d\lambda$ and $d\phi / d\lambda$ in terms of (-E, L), where E and L are the constants of motion that reduce to $dt/d\lambda$ and to $r^2 d\phi / d\lambda$ as $r \to \infty$, respectively (i.e., the energy and angular momentum).
+
+This is pretty much plug and chug.
+\begin{subequations}
+\begin{align*}
+g_{tt}g_{\phi \phi} - g_{t \phi}^2 &= \Big(1 - \frac{2M}{r} \Big) \Big(r^2 + a^2 + \frac{2Ma^2}{r} \Big) + \Big(\frac{2aM}{r}\Big)^2 \\
+&= r^2 + a^2 + \cancel{\frac{2ma^2}{r}} - 2Mr - \cancel{\frac{2ma^2}{r}} - \cancel{\frac{4M^2a^2}{r^2}} + \cancel{\frac{4M^2a^2}{r^2}} \\
+&= r^2 + a^2 - 2Mr \\
+&= -r^2 \Big(1 - \frac{2m}{r} + \frac{a^2}{r^2} \Big) \\
+&= -\frac{r^2}{g_{rr}}
+\end{align*}
+\end{subequations}
+Now we want to solve for $dt/d\lambda$ and $d\phi / d\lambda$.  From our definitions of $E$ and $L$ above, we can set
+\begin{subequations}
+\begin{align*}
+\frac{dt}{d\lambda} &= \frac{1}{g_{tt}} \Big(E - g_{t\phi} \frac{d\phi}{d\lambda} \Big) \\
+L &= g_{\phi \phi} \frac{d\phi}{d\lambda} + \frac{g_{t\phi}}{g_{tt}} \Big(E - g_{t \phi} \frac{d \phi}{d \lambda} \Big) \\
+g_{tt} L - g_{t \phi} E &= \frac{d\phi}{d\lambda} \cancelto{\frac{-r^2}{g_{rr}}}{\Big(g_{\phi \phi}g_{tt} - g_{t \phi}^{2}\Big)}
+\end{align*}
+\end{subequations}
+\begin{subequations}
+\begin{align*}
+\frac{d\phi}{d\lambda} &= - \frac{g_{rr}}{r^2} \Big(g_{tt}L - g_{t \phi} E\Big) \\
+\frac{dt}{d\lambda} &= \frac{E}{g_{tt}} + \frac{g_{t \phi} g_{rr}}{r^2} \Big(g_{tt} - g_{t \phi}E \Big) 
+\end{align*}
+\end{subequations}
+
+\questionpart
+The horizon---the radius within which no future-directed timelike or null geodesic can escape to $r = \infty$---actually occurs not where $g_{tt} = 0$ but where $g_{rr} = \infty$.  Show that there are actually two roots $\{r_+, r_-\}$ for the horizon radius if $0 < \lvert a/M \rvert < 1$.  Show further that there is a radius $r_E$ such that there can be no timelike stationary observers [i.e., observers with $dr/d\tau = 0 = d\phi / d\tau$ in the region $\max(r_+, r_-) \leq r \leq r_E$], and express $r_E$ in terms of $a$ and $M$.  (This region is called the ergosphere).
+
+Realize that $g_{rr} \to \infty$ when $1/g_{rr} \to 0$.  Then
+$$\frac{1}{g_{rr}} = \Big(1 - \frac{2M}{r} + \frac{a^2}{r^2} \Big)$$  We multiply through by $r^2$ to obtain a quadratic.
+$$ r^2 - 2Mr + a^2 = 0$$  This has two solutions, which are
+$$ r_{\pm} = M \pm \sqrt{M^2 - a^2} $$ 
+
+Now to find the limit for $r_E$ we set $dr/d\lambda = d\phi / d\lambda = 0$. which gives us
+
+$$ -g_{tt} \Big(\frac{dt}{d\lambda}\Big)^2 = -m^2 $$
+
+To obtain the limit of a timelike observer, the path has to be null, so $m^2 = 0$. Then $r_e$ is such that $g_{tt} = 0$, which occurs where $(1 - 2M/r) = 0$.  Therefore, $r_E = 2M$. 
+
+\questionpart 
+The horizon is generated by ``frozen'' null geodesics that neither fall into the black hole nor escape to $r = \infty$.  In these coordinates they are described by constant radii, $r = r_H \in \{r_+, r_-\}$, so that $dr / d\lambda = 0$ if $\lambda$ is an affine parameter.  Show that 
+$$ \Omega_H = \Big(\frac{d\phi/d\lambda}{dt/d\lambda} \Big)_{r=r_H} $$ must be constant for such geodesics, and express $\Omega_H$ in terms of $a$, $M$, and $r_\pm$.  This is called the angular velocity of the horizon. 
+
+When $r \in \{r_+, r_-\}$, we can see that it causes $L \to 0$.  Then we can see that 
+$$ g_{\phi \phi} \frac{d\phi}{d\lambda} = -g_{\phi t} \frac{dt}{d\lambda} $$
+$$ \Omega_H = \frac{2aM}{r_\pm} \Big(r_{\pm}^2 + a^2 + \frac{2ma^2}{r_{\pm}} \Big) $$
+\end{alphaparts}
+
+%======================= Question 14 =========================================
+
+\question
+It can be shown that in three dimensions, i.e., where the indices range from 0 to 2 (Lorentzian) or from 1 to 3 (Riemannian), the Riemann tensor can be expressed in terms of the Ricci tensor and Ricci scalar by 
+\begin{equation}
+R_{\lambda \mu \nu \kappa} = A(g_{\lambda \nu}R_{\mu \kappa} - g_{\lambda \kappa}R_{\mu \nu} - g_{\mu \nu}R_{\lambda \kappa} + g_{\mu \kappa} R_{\lambda \nu}) + BR(g_{\lambda \nu} g_{\mu \kappa} - g_{\lambda \kappa} g_{\mu \nu}),  
+\end{equation}
+where $R$ is the Ricci scalar (the trace of the Ricci tensor), for certain dimensionless constants $A$ and $B$.
+
+\begin{alphaparts}
+\questionpart
+Determine A and B from the condition $g^{\lambda \nu} R_{\lambda \mu \nu \kappa} = R_{\mu \kappa}$.
+
+Let's multiply through using the condition.  Doing so, we find
+\begin{multline}
+ g^{\lambda \nu} R_{\lambda \mu \nu \kappa} = A[ \cancel{\delta^{\lambda}_{\lambda} R_{\mu \kappa}} - \cancel{g_{\lambda \kappa} R_{\mu}^{\lambda}} - g_{\mu \nu}R_{\kappa}^{\nu} + g_{\mu \kappa} R] \\ 
+ + B R [\delta_{\lambda}^{\lambda} g_{\mu \kappa} - g^{\lambda \nu} g_{\lambda \kappa} g_{\mu \nu}] = R_{\mu \kappa}
+\end{multline}
+
+$$
+R_{\mu \kappa} = A[ - R_{\mu \kappa} + g_{\mu \kappa}R] + BR[g_{\mu \kappa} - g^{\lambda \nu}g_{\lambda \kappa}g_{\mu \nu} ]
+$$
+
+$(A+B)R g_{\mu \kappa} = 0$.  $A = -B$.  $A = -1$, $B = 1$.
+
+\questionpart
+Show that in 3D Einstein's equations imply that vacuum regions are locally flat.
+
+Recall Einstein's equations, namely
+\begin{equation}
+R_{\mu \nu} - \frac{1}{2}R g_{\mu \nu} = 8 \pi G T_{\mu \nu}
+\end{equation}
+In vacuum, $T_{\mu \nu} = 0$. The trick here is that $R = R_{\lambda}^{\lambda} = g^{\lambda \kappa} R_{\kappa \lambda}$.  Then we can write $Rg_{\mu \nu} = g^{\nu \mu}R_{\mu \nu}g_{\mu \nu}$.  Note that we can move around the sums, and that $g^{\nu \mu} g_{\mu \nu} = 1$. This lets us say 
+$$ R_{\mu \nu} = \frac{1}{2} R_{\mu \nu} $$ which clearly implies $R_{\mu \nu} = 0$. 
+\end{alphaparts}
+
+%===================== Question 15 ===================================
+
+\question
+An astronaut finds herself in free fall in outer space, and not rotating.  She is equipped with some small useless objects, and to combat boredom while she awaits rescue, she flings these away from herself.  Regardless of the magnitude or direction of the initial velocity she imparts to them, the objects return to her after about one hour with minus their initial velocity, each along the same line as that by which it left her.
+
+\begin{alphaparts}
+\questionpart
+She deduces that the space around her, although transparent and offering no resistance, is not a true vacuum.  Why not?
+
+Spacetime curvature is detected via tidal forces.  These forces are specified by the tidal tensor, $\mathcal{T}$.  $$\mathcal{T}_{\hat{i}\hat{j}} = - \frac{\partial^2 \Phi}{\partial x^i \partial x^j} $$ We should also note that $\mathrm{Tr}(\mathcal{T}) = \nabla^2 \Phi = 4 \pi G \rho$.
+
+If the ball comes back from any direction, then all three directions ($i, j, k$) have a negative tidal field.  The fact that the motion is isotropic implies a harmonic oscillator.  Then $\mathcal{T}_{\hat{i} \hat{j}} = -\omega^2 \delta_{\hat{i} \hat{j}}$, and $\omega = 2\pi / T$.  The fact that there are tidal forces implies that $\rho \neq 0$, which means we are not in a vacuum. 
+
+\questionpart
+Estimate the local matter density in $\mbox{ g}\mbox{ cm}^{-3}$, not including the contribution of her own body. 
+
+We take the trace, and note that the period of oscillation is two hours.  Then we can solve.
+$$\mathrm{Tr}(\mathcal{T}) = 3 \omega^2 = 4 \pi G \rho$$
+
+$$\rho = \frac{3 \omega^2}{4 \pi G} = \frac{3 \pi}{G} \cdot \frac{1}{(2 \cdot 3600)^2} $$
+
+Which yields
+$\rho \approx 2725 \mbox{ kg} \mbox{ m}^{-3}$.
+
+\end{alphaparts}
+
+%==================== Question 16 ==================================
+\question
+Consider cosmological perfect fluid with $p = w \rho$ where $w$ is a constant factor.  Assume the universe is spatially homogeneous and isotropic and that the fluid is comoving, i.e., its energy-momentum tensor is $T^{\hat{0}\hat{0}} = \rho$, $T^{\hat{i}\hat{j}} = \rho \eta^{\hat{i}\hat{j}}$ in an orthonormal basis based on the usual cosmological coordinates $t r \theta \phi$. 
+
+\begin{alphaparts}
+
+\questionpart
+Show that $\rho \propto a^q$ as the scale factor $a$ in the cosmological metric changes with time, and relate the exponent $q$ to $w$. 
+
+For a perfect fluid, $T^{\mu \nu} = (\rho + p) U^{\mu} U^{\nu} + p g^{\mu \mu}$, (lecture 15 slides).  In the orthonormal basis, $T^{\mu \nu} = \mathrm{diag}(\rho, P, P, P)$.  Conservation of energy and momentum tells us that $T_{; \nu}^{\mu \nu} = 0$.  The lecture 17 slides tell us that
+
+$$T_{; \nu}^{0 \nu} = \dot{\rho} - 3a\dot{a} \frac{p}{a^2} + \frac{3\dot{a}}{a} \rho = 0$$
+
+$$\dot{\rho} + \frac{3\dot{a}}{a} \rho = \frac{3 \dot{a}}{a} p $$
+
+Which is the same (?) as the first law of thermodynamics for cosmology, namely that 
+\begin{equation}
+\frac{d}{dt}[ \rho(t) a^3(t)] = -p \frac{d}{dt} [a^3(t)] 
+\end{equation}
+
+Then letting $p = w \rho$, that gives us
+
+$$\dot{\rho} + \frac{3\dot{a}}{a}(1 + w) \rho = 0$$
+
+Yielding
+
+$$\frac{\dot{\rho}}{\rho} = -3(1 + w)\frac{\dot{a}}{a} \to \rho \propto a^{-3(1+w)} $$
+
+Although I am a little uncertain about this derivation it is in the lecture 17 slides and you can hopefully just copy those down on the final.
+
+\questionpart
+Suppose $q = -1$.  (This could be approximated, for example, by a ``foam'' of domain walls consisting of false vacuum---and unlikely model for the present universe.  Such walls would have constant surface tension $\kappa$ and mass per unit area $\sigma$ related by $\sigma = -\kappa >0.$) Supposing that this fluid makes the only significant contribution to the mass and energy density, discuss the evolution of $a(t)$ for universes of positive, negative, and zero spatial curvature.  In which cases can there be a ``big bang,'' i.e., $a$ starting from zero?  In which cases can $\dot{a}$ change sign? 
+
+Whenever we want to find the evolution of $a$, we use the Friedmann Equation 
+\begin{equation}
+\Big(\frac{\dot{a}}{a}\Big)^2 + \frac{k}{a^2} = \frac{8 \pi G \rho}{3}
+\end{equation}
+
+Because $q = -1$ that implies $\rho = \rho_0 a_0 / a$. Then, substituting for $\rho$ and multiplying through by $a^2$, we have
+
+$$\dot{a}^2 + k = Qa$$
+
+where $Q = 8 \pi G \rho_0 a_0 / 3$ and is a constant.  This yields a quadrature for $a(t)$, the integration of which is pretty trivial.
+
+$$ \frac{da}{\sqrt{Qa - k}} = \pm dt \to \frac{2}{Q}\sqrt{Qa - k} = \pm t$$
+
+The sign of $\dot{a}$ can change in a closed universe which is when $k>0$.  We can only have $a=0$ if $k \leq 0$.  The discrepancy between this universe and the one in problem 17 is that this one is a fluid, whereas the one in 17 is radiation.
+\end{alphaparts}
+
+%========================== Question 17 ================================
+\question 
+\color{red}
+Take this solution with a grain of salt... I'm unsure about my answer to the ODE, but I think the principle is more or less correct. \\ \\
+\color{black}
+Consider a positively curved universe consisting of pure radiation (i.e. $\Omega_m = \Omega_\lambda = 0, p = \rho/3$). For convenience, scale the comoving coordinates so that $k = 1$, i.e.
+
+$$ ds^2 = -dt^2 + a^2(t) [d\chi^2 + \sin^2 \chi (d\theta^2 + \sin^2 \theta d\phi^2)]$$
+
+A noninteracting massless particle is emitted from $\chi = 0$ at $t = 0$ (the Big Bang) and follows a radial null geodesic.  How far does it travel (maximum $\chi$) before the Big Crunch (the time at which $a(t)$ returns to zero)?
+
+The fact that we have a radial null geodesic gives us $ds^2 = d\theta^2 = d\phi^2 = 0$. This gives us a simpler equation of motion:
+
+$$-dt^2 + a^2(t) d\chi^2 = 0$$
+
+Which we can move around to get a quadrature for $\chi(t)$
+
+$$d\chi = \pm \frac{dt}{a(t)}$$
+
+What does the $\pm$ mean?  It means that we can look at either the positive ($t>0$) or negative ($t<0$) null light cones.  We are only concerned with the positive case, as that is what corresponds to the universe.  To get further we have to find $a(t)$ explicitly.  We approach this, as in problem 16, via the Friedmann equation.  In the radiation only case, however, we have $\rho = \rho_{\mathrm{crit}} \Omega_r / a^4 = \rho_r / a^4$.  What makes our solution a little sketchy is the presence of $k$.  Substituting into the Friedmann equation and multiplying through by $a^2$, we have 
+
+$$
+\dot{a}^2 = \frac{Q}{a^2} - 1
+$$
+
+Which Wolfram tells us yields
+$$
+a(t) = \pm \sqrt{Q - t^2}
+$$
+
+Now we can go back and solve for $\chi(t)$.  Recall that the critical values of a function occur when the derivative is 0 or does not exist.  We get 
+
+$$
+d\chi = \frac{dt}{\sqrt{Q - t^2}}
+$$
+Which suggests that $t_{\chi_{\mathrm{max}}} = \sqrt{Q}$.  Then to obtain the total path length we solve for $\chi_{\mathrm{max}}$ and double it.
+
+\setcounter{questionCounter}{0}
+
+\subsection*{2013 Final Exam Answers}
+
+%======================== Question 1 ==========================
+\question
+Consider the process $\gamma + e^- \to e^- + e^+ + e^-$ in a frame where the initial electron is at rest.  What is the minimum energy ($E_\gamma$) of the photon such that this process is possible?  Express your answer in terms of the electron rest mass, $m_e$.
+
+We can approach this question using the respective four-momenta.  Consider that
+
+$$p_{i}^2 = p_{f}^2 $$
+
+Because we are finding the minimal energy, all of the products are also at rest.  With the initial electron at rest, the only thing not at rest is the photon.  Then we can write out the momentum four-vectors (in $c=1$ units).
+
+\begin{subequations}
+\begin{align*}
+p_\gamma &= (E_\gamma, E_\gamma, 0, 0) \\
+p_{e^-} &= (m_e, 0, 0, 0) \\
+p_f &= (3m_e, 0, 0, 0) \\
+p_i &= p_\gamma + p_{e^-} = (E_\gamma + m_e, E_\gamma, 0, 0)
+\end{align*}
+\end{subequations}
+
+Now we set $p_{i}^2 = p_{f}^2$, remembering that we use the appropriate 4-vector dot product.
+
+\begin{subequations}
+\begin{align*}
+-(E_\gamma + m_e)^2 + E_\gamma^2 &= -9m_e^2 \\
+\cancel{-E_\gamma^2} + \cancel{E_\gamma^2} - 2m_e E_\gamma - m_e^2 &= -9m_e^2 \\
+E_\gamma &= 4m_e
+\end{align*}
+\end{subequations}
+
+\color{red}
+Questions 2 and 3 are already on the review sheet as questions 2 and 7
+\color{black}
+\setcounter{questionCounter}{3}
+
+\question
+A nonrotating neutron star of mass $M = 1.5 M_{\odot}$ has radius $R = 9$ km (i.e., this is its circumference divided by $2 \pi$.  In answering the following questions, take $2GM_{\odot}/c^2 = 3$ km to simplify the arithmetic.
+
+\begin{alphaparts}
+\questionpart
+A hydrogenic iron atom resting on the stellar surface undergoes a transition from the $n=2$ to $n=1$ state, releasing a photon with energy $6.7$ keV in its local frame.  What energy do astronomers (stationary observers at $r \gg 2M$) measure for this photon?
+
+The photon is gravitationally redshifted because it loses energy climbing out of the potential well.  For this case, we realize that
+
+$$E_{obs} \sqrt{1 - \frac{R_s}{r_{obs}}} = E_{em} \sqrt{1 - \frac{R_s}{r_{em}}} $$
+
+Where we take $r_{obs} \to \infty$ and therefore
+
+$$E_{obs} = E_{em} \sqrt{1 - \frac{R_s}{r_{em}}} $$
+
+We can also solve this using the principle of equivalence for gravitational redshift.  Recall that
+
+\begin{equation}
+\nu_{a} \approx \nu_{b} \Big(1 + \frac{\Phi{b} - \Phi{a}}{c^2} \Big)
+\end{equation}
+where $\Phi_{a,b} = -GM/r$.  We also recall $E = h\nu$.  Then we can say
+\begin{subequations}
+\begin{align*}
+h\nu_{a} &= h\nu_{b} \Big(1 + \frac{\frac{-G(1.5M_{\odot})}{9 \mbox{ km}}}{c^2} \Big) \\
+&= h \nu_{b} \Big(\frac{3}{4}\Big) \\
+&\approx 5 \mbox{ keV}
+\end{align*}
+\end{subequations}
+
+\questionpart
+An ``atmosphere'' of hydrogen 1 meter thick sits atop the surface at 9 km.  What is $r$ at the top of the atmosphere? 
+
+We can compute the redshift $z$ by noting that $1 + z = \nu_{e} / \nu_{o}$.  Furthermore, $\gamma = 1 + z$.  So $\gamma = 4/3$. Then we contract the 1 meter atmosphere by dividing by $\gamma$ and get that it has a height of $0.75 \mbox{ m}$.  
+
+\questionpart
+Show that the astronomers can ``see'' (i.e., receive photons from) more than a hemisphere.
+
+From Gauss' theorem, we can treat the neutron star as a point mass at $r=0$.  The source of the light is at $r = 9 \mbox{ km}$.  We can use the gravitational lensing equation to compute the deflection angle $\Delta \phi$.
+
+$$\Delta \phi = \frac{2r_s}{r}$$ 
+
+Then we solve for $\Delta \phi$ and see that it is non-zero.
+
+\questionpart
+What is the radius needed for a creature on the planet of the neutron star to see its own head?  Compare to the radius needed for astronomers to see the entire surface of the star.
+
+For the creature to see its own head, $\Delta \phi = 2\pi$.  For astronomers to see the surface, $\Delta \phi = \pi$.
+
+\end{alphaparts}
+
+%============================ Question 5 ====================================
+\question
+De Sitter space is a cosmological model devoid of matter and radiation ($\Omega_{m} = \Omega_{r} = 0$), but with positive curvature and cosmological constant: $\Lambda, k > 0$. 
+
+
+\begin{alphaparts}
+\questionpart
+What is the line element for this cosmology?
+
+The line element is the one from the closed universe (i.e.)
+\begin{equation}
+ds^2 = -dt^2 + a^2(t)(d \chi^2 + sin^2 (\chi) d\Omega^2)
+\end{equation}
+
+\questionpart
+Solve the Friedman equation for the evolution of the scale factor.  Show that it has non-zero minimum value.
+
+Again we use the Friedman equation.  Evaluating with $\Omega_{m} = \Omega_{r} = 0$ gives us
+the specific one for this problem.
+
+$$
+\Big( \frac{\dot{a}}{a} \Big)^2 = \frac{8 \pi G \rho a^2}{3} - k
+$$
+
+Which we can reduce to quadrature, yielding
+
+$$
+\frac{da}{\sqrt{(Q - \Lambda/3)a^2 - k}} = dt
+$$
+To solve this integral, factor the integrand denominator to get something in your integral table.  We can see from the form of the denominator that there is a minimum value for $a$, because the argument cannot be less than 0.
+
+\questionpart
+Can comoving observers always send and receive signals to each other? 
+
+No.  The expansion eventually proceeds at greater than c, which means they can't.  In the limit of large time, our universe may approach a de Sitter universe.
+
 \end{alphaparts}
 \end{document}
